@@ -6,4 +6,4 @@ top-vect: main.o
 -include main.d
 
 clean:
-	rm -rf *.o top-vect
+	rm -rf *.d *.o top-vect
