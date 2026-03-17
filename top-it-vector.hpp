@@ -10,8 +10,9 @@ namespace topit
     Vector < T >& operator=(const Vector< T >&) = delete;
     ~Vector();
     bool isEmpty() const noexcept;
+    void pushBack(const T&);
     private:
-      T* data;
+      T* data_;
       size_t size_, capacity_;
   };
 }
@@ -19,7 +20,7 @@ namespace topit
 template< class T >
 bool topit::Vector< T >::isEmpty() const noexcept
 {
-  return false;
+  return !size_;
 }
 
 template< class T >
@@ -33,4 +34,11 @@ topit::Vector< T >::~Vector()
 {
   delete[] data_;
 }
+
+template< class T >
+void topit::Vector< T >::pushBack(const T&)
+{
+
+}
+
 #endif

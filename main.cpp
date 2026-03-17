@@ -8,6 +8,13 @@ int testDefaultVector()
   return v.isEmpty();
 }
 
+bool testVectorWithValue()
+{
+    topit::Vector< int > v;
+    v.pushBack(1);
+
+}
+
 int main()
 {
   using test_t = bool(*)();
@@ -17,9 +24,13 @@ int main()
   };
   const size_t count = sizeof(tests) / sizeof(pair_t);
   std::cout<<std::boolalpha;
+  bool pass = true;
   for(size_t i = 0; i < count; ++i)
   {
-    bool res = tests[i]();
-    std::cout<< "Result: " << res << "\n";
+    bool res = tests[i].second();
+    std::cout<<res<<" :";
+    std::cout<< tests[i].first<<"\n";
+    pass = pass && res;
   }
+  std::cout<<pass<<": RESULT\n";
 }
