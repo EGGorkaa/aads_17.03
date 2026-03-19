@@ -20,7 +20,7 @@ int main()
   using test_t = bool(*)();
   using pair_t = std::pair<const char*, test_t>;
   pair_t tests[] = {
-    {"Default vector is empty", "testDefaultVector"}
+    {"Default vector is empty", testDefaultVector}
   };
   const size_t count = sizeof(tests) / sizeof(pair_t);
   std::cout<<std::boolalpha;
