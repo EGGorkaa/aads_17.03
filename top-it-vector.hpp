@@ -11,6 +11,7 @@ namespace topit
     ~Vector();
     bool isEmpty() const noexcept;
     void pushBack(const T&);
+    
     private:
       T* data_;
       size_t size_, capacity_;
